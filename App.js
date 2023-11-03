@@ -1,57 +1,33 @@
-import { View, Text, ScrollView } from 'react-native';
+import { Text, ScrollView, Platform } from 'react-native';
+
+const isAndroid = Platform.OS === 'android';
 
 export default function App() {
   return (
-    <ScrollView
-      // style={{ backgroundColor: '#111' }}
-      persistentScrollbar // * Android only
-      indicatorStyle='black' // * iOS only
-      showsVerticalScrollIndicator={false}
-      // scrollEventThrottle={16}
-      // onScroll={(event) => {
-      //   console.log(event.nativeEvent.contentOffset.y)
-      // }}
-      // onScrollBeginDrag={() => console.log('BeginDrag')}
-      // onScrollEndDrag={() => console.log('EndDrag')}
-      onScrollToTop={() => console.log('ScrollToTop')} // * iOS only
-    >
-      <ScrollView
-        horizontal
-        style={{ marginTop: 150 }}
-        showsHorizontalScrollIndicator={false}
-        scrollEventThrottle={16}
-        onScroll={(event) => {
-          console.log(event.nativeEvent.contentOffset.x)
-        }}
-      >
-        <Text style={{ fontSize: 32 }}>
-          Oi tudo bem
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        </Text>
-      </ScrollView>
-
-      <Text style={{ marginTop: 50, fontSize: 32 }}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    <ScrollView>
+      <Text
+        style={{
+          fontSize: 32,
+          marginTop: isAndroid ? 50 : 100
+        }}>
+          {Platform.select({
+            android: (
+              <Text style={{ fontWeight: 'bold' }}>
+                Hello Android
+              </Text>
+            ),
+            ios: 'Hello iOS',
+            native: 'valor native',
+            default: 'Hello default'
+            // android: 'Hello Android',
+            // ios: 'Hello iOS',
+            // native: 'valor native',
+            // default: 'Hello default'
+          })}
+        {/* {`Welcome to React Native ${isAndroid ? 'Android' : 'iOS'}`} */}
+        {/* {isAndroid? 'Hello Android' : 'Oi iOS'} */}
+        {/* {isAndroid && 'Oi beleza?'} */}
       </Text>
-      
-      
     </ScrollView>
   )
 }
