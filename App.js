@@ -1,13 +1,26 @@
-import { ScrollView } from 'react-native';
+import { ScrollView, StatusBar } from 'react-native';
 
-import { print } from './src/utils/print'
 import { Button } from './src/Button';
-
-print()
 
 export default function App() {
   return (
-    <ScrollView style={{ marginTop: 200 }}>
+    <ScrollView style={{ backgroundColor: '#222' }}>
+      <StatusBar
+        hidden={false}
+        // backgroundColor='#f00' // * Android only
+        backgroundColor="rgba(255, 0, 0, .5)" // * Android only
+        barStyle='light-content'
+        animated
+        translucent={true} // * Android only
+      />
+
+      {/* <StatusBar
+        backgroundColor='#00f' // * Android only
+      /> */}
+
+      <Button />
+      <Button />
+      <Button />
       <Button />
     </ScrollView>
   )
