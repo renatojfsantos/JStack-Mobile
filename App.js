@@ -1,33 +1,14 @@
-import { Text, ScrollView, Platform } from 'react-native';
+import { ScrollView } from 'react-native';
 
-const isAndroid = Platform.OS === 'android';
+import { print } from './src/utils/print'
+import { Button } from './src/Button';
+
+print()
 
 export default function App() {
   return (
-    <ScrollView>
-      <Text
-        style={{
-          fontSize: 32,
-          marginTop: isAndroid ? 50 : 100
-        }}>
-          {Platform.select({
-            android: (
-              <Text style={{ fontWeight: 'bold' }}>
-                Hello Android
-              </Text>
-            ),
-            ios: 'Hello iOS',
-            native: 'valor native',
-            default: 'Hello default'
-            // android: 'Hello Android',
-            // ios: 'Hello iOS',
-            // native: 'valor native',
-            // default: 'Hello default'
-          })}
-        {/* {`Welcome to React Native ${isAndroid ? 'Android' : 'iOS'}`} */}
-        {/* {isAndroid? 'Hello Android' : 'Oi iOS'} */}
-        {/* {isAndroid && 'Oi beleza?'} */}
-      </Text>
+    <ScrollView style={{ marginTop: 200 }}>
+      <Button />
     </ScrollView>
   )
 }
