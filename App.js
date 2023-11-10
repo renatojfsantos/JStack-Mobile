@@ -1,4 +1,4 @@
-import { ScrollView, StatusBar, SafeAreaView } from 'react-native';
+import { ScrollView, StatusBar, SafeAreaView, Platform } from 'react-native';
 
 import { Button } from './src/Button';
 
