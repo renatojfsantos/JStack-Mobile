@@ -1,6 +1,6 @@
-import { Platform, StatusBar } from "react-native";
+import { Platform, StatusBar, StyleSheet } from "react-native";
 
-export const styles = {
+export const styles = StyleSheet.create({
   wrapper: {
     marginTop: (
       Platform.OS === 'android'
@@ -15,4 +15,4 @@ export const styles = {
   buttonsContainer: {
     gap: 16,
   }
-}
+});
