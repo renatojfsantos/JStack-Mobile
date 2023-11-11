@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
   TouchableWithoutFeedback,
   TouchableNativeFeedback,
+  Pressable,
 } from 'react-native';
 
 import { styles } from './styles';
@@ -107,6 +108,34 @@ export default function App() {
           >
             <Text>Ver mais</Text>
           </TouchableOpacity>
+
+          <Pressable
+            style={({ pressed }) => [
+              styles.button,
+              pressed && {
+                transform: 'scale(0.97)'
+              }
+            ]}
+            android_ripple={{ color: '#f00' }}
+            android_disableSound
+            //
+            onPress={() => console.log('Pressable onPress')}
+            onPressIn={() => console.log('Pressable onPressIn')}
+            onPressOut={() => console.log('Pressable onPressOut')}
+            onLongPress={() => console.log('Pressable onLongPress')}
+            delayLongPress={500}
+          >
+            {({ pressed }) => (
+              <Text
+                style={[
+                  styles.buttonLabel,
+                  pressed && { opacity: 0.5}
+                ]}
+              >
+                Pressable
+              </Text>
+            )}
+          </Pressable>
         </View>
       </ScrollView>
     </SafeAreaView>
