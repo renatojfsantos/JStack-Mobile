@@ -2,9 +2,10 @@ import {
   SafeAreaView,
   ScrollView,
   View,
+  Text,
   Button,
+  TouchableOpacity,
 } from 'react-native';
-
 
 import { styles } from './styles';
 
@@ -14,12 +15,19 @@ export default function App() {
       <ScrollView style={styles.containner}>
         <View style={styles.buttonsContainer}>
           <Button
-            title="Meu Button"
-            color='#F00'
+            title="Button"
+            color='#000'
             onPress={() => alert('Button pressed')}
-            disabled={false}
-            // touchSoundDisabled={false} // * Android Only
           />
+
+          <TouchableOpacity
+            activeOpacity={0.5}
+            onPress={() => alert('TouchableOpacity pressed')}
+            style={styles.button}
+          >
+            <Text style={styles.buttonLabel}>TouchableOpacity</Text>
+          </TouchableOpacity>
+
         </View>
       </ScrollView>
     </SafeAreaView>
