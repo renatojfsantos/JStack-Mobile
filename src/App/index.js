@@ -25,8 +25,13 @@ export default function App() {
 
           <TouchableOpacity
             activeOpacity={0.5}
-            onPress={() => alert('TouchableOpacity pressed')}
             style={styles.button}
+            //
+            onPress={() => console.log('onPress')}
+            onPressIn={() => console.log('onPressIn')}
+            onPressOut={() => console.log('onPressOut')}
+            onLongPress={() => console.log('onLongPress')}
+            delayLongPress={500}
           >
             <Text style={styles.buttonLabel}>
               TouchableOpacity
@@ -34,9 +39,14 @@ export default function App() {
           </TouchableOpacity>
 
           <TouchableHighlight
-            onPress={() => alert('TouchableHighlight pressed')}
             style={styles.button}
             underlayColor="#f00"
+            //
+            onPress={() => console.log('onPress')}
+            onPressIn={() => console.log('onPressIn')}
+            onPressOut={() => console.log('onPressOut')}
+            onLongPress={() => console.log('onLongPress')}
+            delayLongPress={500}
           >
             <Text style={styles.buttonLabel}>
               TouchableHighlight
@@ -44,7 +54,11 @@ export default function App() {
           </TouchableHighlight>
 
           <TouchableWithoutFeedback
-            onPress={() => alert('TouchableWithoutFeedback pressed')}
+            onPress={() => console.log('onPress')}
+            onPressIn={() => console.log('onPressIn')}
+            onPressOut={() => console.log('onPressOut')}
+            onLongPress={() => console.log('onLongPress')}
+            delayLongPress={500}
           >
             <View style={styles.button}>
               <Text style={styles.buttonLabel}>
@@ -55,8 +69,12 @@ export default function App() {
 
           <View style={styles.androidButtonContainer}>
             <TouchableNativeFeedback
-              onPress={() => alert('TouchableNativeFeedback pressed')}
               background={TouchableNativeFeedback.Ripple('#f00')}
+              onPress={() => console.log('onPress')}
+              onPressIn={() => console.log('onPressIn')}
+              onPressOut={() => console.log('onPressOut')}
+              onLongPress={() => console.log('onLongPress')}
+              delayLongPress={500}
             >
               <View style={styles.button}>
                 <Text style={styles.buttonLabel}>
