@@ -13,11 +13,11 @@ import {
 import { styles } from './styles';
 
 export default function App() {
-  const disabled = true;
+  const disabled = false;
 
   return (
     <SafeAreaView style={styles.wrapper}>
-      <ScrollView style={styles.containner}>
+      <ScrollView style={styles.containner} scrollEnabled={false}>
         <View style={styles.buttonsContainer}>
           <Button
             title="Button"
@@ -34,11 +34,12 @@ export default function App() {
             ]}
             disabled={disabled}
             //
-            onPress={() => console.log('onPress')}
+            onPress={() => alert('onPress')}
             onPressIn={() => console.log('onPressIn')}
             onPressOut={() => console.log('onPressOut')}
             onLongPress={() => console.log('onLongPress')}
             delayLongPress={500}
+            pressRetentionOffset={16}
           >
             <Text style={styles.buttonLabel}>
               TouchableOpacity
