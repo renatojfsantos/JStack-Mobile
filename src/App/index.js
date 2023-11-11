@@ -5,6 +5,8 @@ import {
   Text,
   Button,
   TouchableOpacity,
+  TouchableHighlight,
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 import { styles } from './styles';
@@ -25,9 +27,30 @@ export default function App() {
             onPress={() => alert('TouchableOpacity pressed')}
             style={styles.button}
           >
-            <Text style={styles.buttonLabel}>TouchableOpacity</Text>
+            <Text style={styles.buttonLabel}>
+              TouchableOpacity
+            </Text>
           </TouchableOpacity>
 
+          <TouchableHighlight
+            onPress={() => alert('TouchableHighlight pressed')}
+            style={styles.button}
+            underlayColor="#f00"
+          >
+            <Text style={styles.buttonLabel}>
+              TouchableHighlight
+            </Text>
+          </TouchableHighlight>
+
+          <TouchableWithoutFeedback
+            onPress={() => alert('TouchableWithoutFeedback pressed')}
+          >
+            <View style={styles.button}>
+              <Text style={styles.buttonLabel}>
+                TouchableWithoutFeedback
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
       </ScrollView>
     </SafeAreaView>
