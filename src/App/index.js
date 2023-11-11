@@ -13,6 +13,8 @@ import {
 import { styles } from './styles';
 
 export default function App() {
+  const disabled = true;
+
   return (
     <SafeAreaView style={styles.wrapper}>
       <ScrollView style={styles.containner}>
@@ -21,11 +23,16 @@ export default function App() {
             title="Button"
             color='#f00'
             onPress={() => alert('Button pressed')}
+            disabled
           />
 
           <TouchableOpacity
             activeOpacity={0.5}
-            style={styles.button}
+            style={[
+              styles.button,
+              disabled && styles.buttonDisabled
+            ]}
+            disabled={disabled}
             //
             onPress={() => console.log('onPress')}
             onPressIn={() => console.log('onPressIn')}
