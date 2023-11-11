@@ -90,6 +90,22 @@ export default function App() {
               </View>
             </TouchableNativeFeedback>
           </View>
+
+          <TouchableOpacity
+            onPress={() => alert('Ver mais')}
+            style={{
+              backgroundColor: 'red',
+              alignSelf:'flex-start',
+            }}
+            hitSlop={{
+              bottom: 16,
+              left: 16,
+              right: 16,
+              top: 16,
+            }}
+          >
+            <Text>Ver mais</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
